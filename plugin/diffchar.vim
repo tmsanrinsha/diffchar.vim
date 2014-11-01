@@ -158,14 +158,18 @@ nnoremap <silent> [e :call <SID>JumpDiffChar(0, 0)<CR>
 nnoremap <silent> ]e :call <SID>JumpDiffChar(1, 0)<CR>
 
 " Set a difference unit type
-let g:DiffUnit = "Char"		" any single character
+if !exists("g:DiffUnit")
+	let g:DiffUnit = "Char"		" any single character
+endif
 " let g:DiffUnit = "Word1"	" \w\+ word and any \W single character
 " let g:DiffUnit = "Word2"	" non-space and space words
 " let g:DiffUnit = "Word3"	" \< or \> character class boundaries
 " let g:DiffUnit = "CSV(,)"	" character separated by (,;\t)
 
 " Set a difference unit matching colors
-let g:DiffColors = 0		" always 1 color
+if !exists("g:DiffColors")
+	let g:DiffColors = 0		" always 1 color
+endif
 " let g:DiffColors = 1		" 4 colors in fixed order
 " let g:DiffColors = 2		" 8 colors in fixed order
 " let g:DiffColors = 3		" 16 colors in fixed order
@@ -178,7 +182,9 @@ let g:DiffUpdate = 0		" disable
 endif
 
 " Set a difference algorithm
-let g:DiffAlgorithm = "ONP"
+if !exists("g:DiffAlgorithm")
+	let g:DiffAlgorithm = "ONP"
+endif
 " let g:DiffAlgorithm = "OND"
 " let g:DiffAlgorithm = "Basic"
 
